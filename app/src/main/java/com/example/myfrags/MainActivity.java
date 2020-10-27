@@ -34,6 +34,7 @@ public class MainActivity extends FragmentActivity implements Fragment1.OnButton
     @Override
     public void onButtonClickClockwise() {
 
+
         int t = frames[0];
         frames[0] = frames[1];
         frames[1] = frames[2];
@@ -89,7 +90,7 @@ public class MainActivity extends FragmentActivity implements Fragment1.OnButton
         Fragment[] newFragments = new Fragment[]{new Fragment1(), new Fragment2(), new Fragment3(), new Fragment4()};
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         for (int i = 0; i < 4; i++) {
             transaction.replace(frames[i], newFragments[i]);
